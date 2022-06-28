@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+           <img src="{{event.image.url}}" width="250" height="300">
+        </div>
+
+<div class="col-md-6">
+   <h2> {{event.name}}<br></h2>
+    <h4>{{event.description}}<br></h4>
+    {{event.team}}<br>
+    <a class="btn btn-warning" href="{% url 'sportsapp:update' event.id %}" >update</a>
+    <a class="btn btn-danger" href="{% url 'sportsapp:delete' event.id %}" >delete</a>
+</div>
+    </div>
+</div>
+{% endblock %}
